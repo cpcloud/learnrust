@@ -6,10 +6,14 @@ authors = ["Phillip Cloud <cpcloud@gmail.com>"]
 [dependencies]
 clap = '*'
 regex = '*'
-libc = { version = "*", default-features = false }
+libc = { version = '*', default-features = false }
+num = '*'
+image = '*'
+crossbeam = '*'
+num_cpus = '*'
 
 [profile.release]
-opt-level = 'z'
+opt-level = 3
 debug = false
 rpath = false
 lto = true
@@ -17,3 +21,4 @@ debug-assertions = false
 panic = 'abort'
 incremental = false
 overflow-checks = false
+
