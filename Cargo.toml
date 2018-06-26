@@ -1,0 +1,19 @@
+[package]
+name = "learnrust"
+version = "0.1.0"
+authors = ["Phillip Cloud <cpcloud@gmail.com>"]
+
+[dependencies]
+clap = '*'
+regex = '*'
+libc = { version = "*", default-features = false }
+
+[profile.release]
+opt-level = 'z'
+debug = false
+rpath = false
+lto = true
+debug-assertions = false
+panic = 'abort'
+incremental = false
+overflow-checks = false
