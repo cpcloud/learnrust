@@ -23,9 +23,8 @@ pub fn make_app(name: &str) -> App {
 pub fn get_lines_reader(matches: &ArgMatches) -> Box<BufRead> {
     match matches.value_of("file") {
         None => Box::new(BufReader::new(io::stdin())),
-        Some(filename) => {
-            let message = format!("Unable to open file {}", filename);
-            Box::new(BufReader::new(File::open(filename).expect(&message)))
-        }
+        Some(filename) => Box::new(BufReader::new(
+            File::open(filename).expect(&format!("Unable to open file {}", filename)),
+        )),
     }
 }

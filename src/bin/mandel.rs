@@ -140,7 +140,7 @@ fn main() {
     let lower_right = parse_complex(&args[4]).expect("error parsing lower right corner point");
     let mut pixels = vec![0u8; bounds.0 * bounds.1];
 
-    let threads = num_cpus::get() * 8; // why is 8x more threads more effective than nthreads == n logical cores
+    let threads = num_cpus::get() * 8; // why is 8x more threads more effective than nthreads == n logical cores?
     println!("num_cpus: {}", threads);
     let rows_per_band = bounds.1 / threads + 1;
     {
